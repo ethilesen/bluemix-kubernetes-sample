@@ -2,8 +2,8 @@
 # Creator: Espen Thilesen, IBM GBS August 2018
 
 echo "Download IBMCloud CLI"
-sudo curl -sL https://ibm.biz/idt-installer install | bash
-find / -name ibmcloud -print
+curl -sL https://ibm.biz/idt-installer | bash
+ls 
 echo $PATH
 ls -l /usr/bin
 echo 'testing cli '
