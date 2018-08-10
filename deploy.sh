@@ -1,16 +1,16 @@
 #!/bin/bash
 
 echo "Create Guestbook"
-IP_ADDR=$(bx cs workers $CLUSTER_NAME | grep normal | awk '{ print $2 }')
+IP_ADDR=$(ibmcloud cs workers $IBMCLOUD_CLUSTER_NAME | grep normal | awk '{ print $2 }')
 if [ -z $IP_ADDR ]; then
-  echo "$CLUSTER_NAME not created or workers not ready"
+  echo "$IBMCLOUD_CLUSTER_NAME not created or workers not ready"
   exit 1
 fi
 
 echo -e "Configuring vars"
-exp=$(bx cs cluster-config $CLUSTER_NAME | grep export)
+exp=$(ibmcloud cs cluster-config $IBM_CLOUD_CLUSTER_NAME | grep export)
 if [ $? -ne 0 ]; then
-  echo "Cluster $CLUSTER_NAME not created or not ready."
+  echo "Cluster $IBMCLOUD_CLUSTER_NAME not created or not ready."
   exit 1
 fi
 eval "$exp"
