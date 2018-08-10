@@ -3,7 +3,7 @@
 
 echo "Download IBMCloud CLI"
 curl -sL https://ibm.biz/idt-installer | bash
-export PATH="/usr/local/ibmcloud/bin/:$PATH"
+export PATH="/usr/local/bin/:$PATH"
 echo $PATH
 echo 'testing cli '
 ibmcloud -v
