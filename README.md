@@ -4,5 +4,6 @@ The Bluemix Kubernetes sample demonstrates how to set up your environment to dep
 
 Define the follwing env variables at travis:
 
-IBMCLOUD_API_ENDPOINT : https://api.eu-de.bluemix.net 
-IBMCLOUD_APIKEY : <generate an api key from cli..>
+IBMCLOUD_API_ENDPOINT : https://api.eu-de.bluemix.net /n
+IBMCLOUD_APIKEY : <generate an api key from cli..>  /n
+IBMCLOUD_CLUSTERNAME : <clustername>
