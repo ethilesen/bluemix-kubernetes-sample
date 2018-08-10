@@ -7,6 +7,7 @@ curl -sL https://ibm.biz/idt-installer | bash
 echo $PATH
 echo 'testing cli '
 bx -v
-ibmcloud -v
-ibmcloud plugin list
-kubectl version
+ic=$(ibmcloud -v)
+icp=$(ibmcloud plugin list)
+kctl=$(kubectl version)
+echo $ic $icp $kctl
