@@ -5,9 +5,15 @@ echo "Download IBMCloud CLI"
 curl -sL https://ibm.biz/idt-installer | bash
 
 echo $PATH
+ls -l /usr/bin
 echo 'testing cli '
-bx -v
-ic=$(ibmcloud -v)
-icp=$(ibmcloud plugin list)
-kctl=$(kubectl version)
-echo $ic $icp $kctl
+ibmcloud -v
+if [ $? -ne 0 ]; then
+  echo "Failed to initialize to IBM Cloud CLI"
+  exit 1
+fi
+kctl=kubectl version
+if [ $? -ne 0 ]; then
+  echo "Failed to initialize to kubctl CLI"
+  exit 1
+fi
