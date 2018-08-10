@@ -3,8 +3,10 @@
 
 echo "Download IBMCloud CLI"
 curl -sL https://ibm.biz/idt-installer | bash
-export PATH="/usr/local/bin/:$PATH"
+
 echo $PATH
 echo 'testing cli '
+bx -v
 ibmcloud -v
 ibmcloud plugin list
+kubectl version
